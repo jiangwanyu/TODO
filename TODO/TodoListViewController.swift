@@ -9,7 +9,7 @@
 import UIKit
 
 class TodoListViewController: UITableViewController {
-    let itemArray = ["购买水杯","买手机","修改密码"]
+    var itemArray = ["购买水杯","买手机","修改密码"]
     
     
     override func viewDidLoad() {
@@ -48,16 +48,19 @@ class TodoListViewController: UITableViewController {
     }
    
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        var textField = UITextField()
         let alert = UIAlertController(title: "添加一个ToDo项目", message: "", preferredStyle: .alert)
         let action = UIAlertAction (title: " 添加项目 ", style: .default) {
             (action) in
-            
+            self.itemArray.append(textField.text!)
+            self.tableView.reloadData()
             print("成功！")
         }
         
         alert.addTextField{ (alertTextField) in
             alertTextField.placeholder = "创建一个新项目..."
-            print(alertTextField.text!)
+            //print(alertTextField.text!)
+            textField = alertTextField
         }
         
         alert.addAction(action)
