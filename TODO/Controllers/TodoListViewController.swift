@@ -7,41 +7,23 @@
 //
 
 import UIKit
+import CoreData
+
 
 class TodoListViewController: UITableViewController {
-    //var itemArray = ["购买水杯","买手机","修改密码","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p"]
+  
     var itemArray = [Item]()
-    //let defaults = UserDefaults.standard
+   
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     //print(dataFilePath)
-    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadItems()
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         
-        //let newItem = Item()
-        //newItem.title = "购买水杯"
-        //itemArray.append(newItem)
-        
-        //let newItem2 = Item()
-        //newItem2.title = "买手机"
-        //itemArray.append(newItem2)
-        
-        //let newItem3 = Item()
-        //newItem3.title = "修改密码"
-        //itemArray.append(newItem3)
-        
-       // for index in 4...120{
-         //   let newItem = Item()
-           // newItem.title = "第\(index)事物"
-            //itemArray.append(newItem)
-        //}
-        
-        //if let items = defaults.array(forKey: "ToDoListArray") as? [Item] {
-            //itemArray = items
-        //}
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -71,18 +53,17 @@ class TodoListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)
-        //if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
-            //tableView.cellForRow(at: indexPath)?.accessoryType = .none
-        //}else
-        //{
-            //tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        //}
+        
         if itemArray[indexPath.row].done == false {
             itemArray[indexPath.row].done = true
         }else
         {
             itemArray[indexPath.row].done = false
         }
+        
+        itemArray[indexPath.row].done = !itemArray[indexPath.row].done
+        let title = itemArray[indexPath.row].title
+        itemArray[indexPath.row].setValue(title! + " - (已完成)", forKey: "title")
         
         tableView.beginUpdates()
         tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.none)
@@ -97,9 +78,11 @@ class TodoListViewController: UITableViewController {
         let alert = UIAlertController(title: "添加一个ToDo项目", message: "", preferredStyle: .alert)
         let action = UIAlertAction (title: " 添加项目 ", style: .default) {
             (action) in
-            let newItem = Item()
-            newItem.title = textField.text!
+            //let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             
+            let newItem = Item(context: self.context)
+            newItem.title = textField.text!
+            newItem.done = false
             self.itemArray.append(newItem)
             
             self.saveItems()
@@ -119,11 +102,9 @@ class TodoListViewController: UITableViewController {
     }
     
     func saveItems() {
-        let encoder = PropertyListEncoder()
-        
         do{
-            let data = try encoder.encode(self.itemArray)
-            try data.write(to: self.dataFilePath!)
+           
+            try context.save()
         }catch{
             print("编码错误：\(error)")
         }
@@ -133,13 +114,12 @@ class TodoListViewController: UITableViewController {
     }
     
     func loadItems(){
-        if let data = try? Data(contentsOf: dataFilePath!){
-            let decoder = PropertyListDecoder()
-            do {
-                itemArray = try decoder.decode([Item].self, from: data)
-            }catch{
-                print ("解码错误")
-            }
+        let request: NSFetchRequest<Item> = Item.fetchRequest()
+        
+        do{
+            itemArray = try context.fetch(request)
+        }catch{
+            print("从context获取数据错误: \(error)")
         }
     }
 }
