@@ -11,31 +11,37 @@ import UIKit
 class TodoListViewController: UITableViewController {
     //var itemArray = ["购买水杯","买手机","修改密码","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p"]
     var itemArray = [Item]()
-    let defaults = UserDefaults.standard
+    //let defaults = UserDefaults.standard
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
+    //print(dataFilePath)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let newItem = Item()
-        newItem.title = "购买水杯"
-        itemArray.append(newItem)
         
-        let newItem2 = Item()
-        newItem2.title = "买手机"
-        itemArray.append(newItem2)
+        loadItems()
         
-        let newItem3 = Item()
-        newItem3.title = "修改密码"
-        itemArray.append(newItem3)
+        //let newItem = Item()
+        //newItem.title = "购买水杯"
+        //itemArray.append(newItem)
         
-        for index in 4...120{
-            let newItem = Item()
-            newItem.title = "第\(index)事物"
-            itemArray.append(newItem)
-        }
+        //let newItem2 = Item()
+        //newItem2.title = "买手机"
+        //itemArray.append(newItem2)
         
-        if let items = defaults.array(forKey: "ToDoListArray") as? [Item] {
-            itemArray = items
-        }
+        //let newItem3 = Item()
+        //newItem3.title = "修改密码"
+        //itemArray.append(newItem3)
+        
+       // for index in 4...120{
+         //   let newItem = Item()
+           // newItem.title = "第\(index)事物"
+            //itemArray.append(newItem)
+        //}
+        
+        //if let items = defaults.array(forKey: "ToDoListArray") as? [Item] {
+            //itemArray = items
+        //}
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -82,7 +88,7 @@ class TodoListViewController: UITableViewController {
         tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.none)
         tableView.endUpdates()
         
-        
+        self.saveItems()
         tableView.deselectRow(at: indexPath, animated: true)
     }
    
@@ -95,8 +101,10 @@ class TodoListViewController: UITableViewController {
             newItem.title = textField.text!
             
             self.itemArray.append(newItem)
-            self.defaults.set(self.itemArray, forKey: "ToDoListArray")
-            self.tableView.reloadData()
+            
+            self.saveItems()
+            
+            
             print("成功！")
         }
         
@@ -110,5 +118,29 @@ class TodoListViewController: UITableViewController {
         present(alert,animated: true, completion: nil)
     }
     
+    func saveItems() {
+        let encoder = PropertyListEncoder()
+        
+        do{
+            let data = try encoder.encode(self.itemArray)
+            try data.write(to: self.dataFilePath!)
+        }catch{
+            print("编码错误：\(error)")
+        }
+        
+       
+        self.tableView.reloadData()
+    }
+    
+    func loadItems(){
+        if let data = try? Data(contentsOf: dataFilePath!){
+            let decoder = PropertyListDecoder()
+            do {
+                itemArray = try decoder.decode([Item].self, from: data)
+            }catch{
+                print ("解码错误")
+            }
+        }
+    }
 }
 
