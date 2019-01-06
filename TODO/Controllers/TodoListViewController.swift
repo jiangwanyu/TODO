@@ -13,7 +13,12 @@ import CoreData
 class TodoListViewController: UITableViewController {
     
     var itemArray = [Item]()
-   
+    var selectedCategory: Category? {
+        didSet {
+            loadItems()
+        }
+    }
+    
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     //print(dataFilePath)
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -114,6 +119,8 @@ class TodoListViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
+    
+    
     func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest()){
       
         
@@ -124,6 +131,9 @@ class TodoListViewController: UITableViewController {
         }
         tableView.reloadData()
     }
+    
+    
+    
 }
 extension TodoListViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar){

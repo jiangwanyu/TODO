@@ -55,7 +55,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5CZ-b6-Flq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="cFR-PE-p7D"/>
             </objects>
-            <point key="canvasLocation" x="3456.8000000000002" y="-25.637181409295355"/>
+            <point key="canvasLocation" x="3782" y="-27"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TDS-sr-vmy">
@@ -77,12 +77,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbg-ui-Ayu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2114" y="-27"/>
+            <point key="canvasLocation" x="1626" y="-27"/>
         </scene>
         <!--TODO-->
         <scene sceneID="t7O-nB-310">
             <objects>
-                <tableViewController id="HSr-6F-04D" customClass="CategoryTableViewController" customModule="TODO" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="HSr-6F-04D" customClass="CategoryViewController" customModule="TODO" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="OyE-oE-BeK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
