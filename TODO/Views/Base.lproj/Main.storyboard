@@ -17,9 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="xZb-1h-DxM">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="tM7-84-G0E" id="Kmq-1z-zhY"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ToDoItemCell" id="Zpk-hZ-NcV">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zpk-hZ-NcV" id="FY4-KN-Raq">
                                     <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
@@ -28,8 +36,8 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="tM7-84-G0E" id="Mac-Uu-HmV"/>
-                            <outlet property="delegate" destination="tM7-84-G0E" id="08q-fr-Fyz"/>
+                            <outlet property="dataSource" destination="tM7-84-G0E" id="WYW-2c-965"/>
+                            <outlet property="delegate" destination="tM7-84-G0E" id="X0T-GW-mac"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="TODO" id="EI6-KW-Zea">
@@ -40,8 +48,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="cFR-PE-p7D" id="LLv-I2-MG6"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5CZ-b6-Flq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="cFR-PE-p7D"/>
             </objects>
             <point key="canvasLocation" x="3456.8000000000002" y="-25.637181409295355"/>
         </scene>
