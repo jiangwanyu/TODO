@@ -27,7 +27,7 @@ class TodoListViewController: UITableViewController {
         super.viewDidLoad()
         
         
-        loadItems()
+        //loadItems()
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -87,14 +87,17 @@ class TodoListViewController: UITableViewController {
             //let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             
             let newItem = Item(context: self.context)
+            
             newItem.title = textField.text!
             newItem.done = false
+            newItem.parentCategory = self.selectedCategory
+            
             self.itemArray.append(newItem)
             
             self.saveItems()
             
             
-            print("成功！")
+            //print("成功！")
         }
         
         alert.addTextField{ (alertTextField) in
@@ -121,8 +124,18 @@ class TodoListViewController: UITableViewController {
     
     
     
-    func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest()){
+    func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest(), predicate: NSPredicate? = nil){
       
+        let categoryPredicate = NSPredicate(format: "parentCategory.name MATCHES %@", selectedCategory!.name!)
+        print(selectedCategory!.name!)
+        
+        if let addtionalPredicate = predicate {
+            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoryPredicate, addtionalPredicate])
+        }else
+        {
+            
+            request.predicate = categoryPredicate
+        }
         
         do{
             itemArray = try context.fetch(request)
