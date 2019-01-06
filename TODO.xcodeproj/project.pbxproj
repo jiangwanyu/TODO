@@ -13,6 +13,7 @@
 		901A11C121D8993C0080BE85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 901A11C021D8993C0080BE85 /* Assets.xcassets */; };
 		901A11C421D8993C0080BE85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 901A11C221D8993C0080BE85 /* LaunchScreen.storyboard */; };
 		9059276621E0D11700406098 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9059276421E0D11700406098 /* DataModel.xcdatamodeld */; };
+		90965E5A21E1AFAE00A91565 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90965E5921E1AFAE00A91565 /* CategoryTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		901A11C321D8993C0080BE85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		901A11C521D8993C0080BE85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9059276521E0D11700406098 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		90965E5921E1AFAE00A91565 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				901A11BB21D8993B0080BE85 /* TodoListViewController.swift */,
+				90965E5921E1AFAE00A91565 /* CategoryTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				901A11BC21D8993B0080BE85 /* TodoListViewController.swift in Sources */,
 				9059276621E0D11700406098 /* DataModel.xcdatamodeld in Sources */,
 				901A11BA21D8993B0080BE85 /* AppDelegate.swift in Sources */,
+				90965E5A21E1AFAE00A91565 /* CategoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
