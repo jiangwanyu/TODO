@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TODO/Controllers/CategoryViewController.swift"
+            timestampString = "568907116.42093"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TODO/AppDelegate.swift"
+            timestampString = "568825041.047626"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TODO/Controllers/CategoryViewController.swift"
+            timestampString = "568907116.421333"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "CategoryViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "variable initialization expression of TODO.CategoryViewController.realm : RealmSwift.Realm"
+                  moduleName = "TODO"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chaojidiannao/Desktop/TODO/TODO/Controllers/CategoryViewController.swift"
+                  timestampString = "568851353.4651771"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "17">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TODO.CategoryViewController.realm.getter : RealmSwift.Realm"
+                  moduleName = "TODO"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chaojidiannao/Desktop/TODO/TODO/Controllers/CategoryViewController.swift"
+                  timestampString = "568851353.467759"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "109">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TODO.CategoryViewController.init(style: __C.UITableViewStyle) -&gt; TODO.CategoryViewController"
+                  moduleName = "TODO"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chaojidiannao/Desktop/TODO/TODO/Controllers/CategoryViewController.swift"
+                  timestampString = "568851353.469907"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "170">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TODO.CategoryViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; TODO.CategoryViewController"
+                  moduleName = "TODO"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chaojidiannao/Desktop/TODO/TODO/Controllers/CategoryViewController.swift"
+                  timestampString = "568851353.472892"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "235">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TODO.CategoryViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;TODO.CategoryViewController&gt;"
+                  moduleName = "TODO"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chaojidiannao/Desktop/TODO/TODO/Controllers/CategoryViewController.swift"
+                  timestampString = "568851353.475642"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "170">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TODO/Controllers/CategoryViewController.swift"
+            timestampString = "568907116.421512"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TODO/Data Model/Item.swift"
+            timestampString = "568851510.501111"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "Item"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TODO.Item.parentCategory.getter : RealmSwift.LinkingObjects&lt;TODO.Category&gt;"
+                  moduleName = "TODO"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chaojidiannao/Desktop/TODO/TODO/Data%20Model/Item.swift"
+                  timestampString = "568851353.5107"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "109">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TODO.Item.parentCategory.setter : RealmSwift.LinkingObjects&lt;TODO.Category&gt;"
+                  moduleName = "TODO"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chaojidiannao/Desktop/TODO/TODO/Data%20Model/Item.swift"
+                  timestampString = "568851353.517158"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TODO.Item.init() -&gt; TODO.Item"
+                  moduleName = "TODO"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chaojidiannao/Desktop/TODO/TODO/Data%20Model/Item.swift"
+                  timestampString = "568851353.5199521"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "684">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TODO.Item.init(value: Any) -&gt; TODO.Item"
+                  moduleName = "TODO"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chaojidiannao/Desktop/TODO/TODO/Data%20Model/Item.swift"
+                  timestampString = "568851353.522575"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "701">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TODO.Item.init(realm: __ObjC.RLMRealm, schema: __ObjC.RLMObjectSchema) -&gt; TODO.Item"
+                  moduleName = "TODO"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chaojidiannao/Desktop/TODO/TODO/Data%20Model/Item.swift"
+                  timestampString = "568851353.524969"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "712">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TODO.Item.init(value: Any, schema: __ObjC.RLMSchema) -&gt; TODO.Item"
+                  moduleName = "TODO"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chaojidiannao/Desktop/TODO/TODO/Data%20Model/Item.swift"
+                  timestampString = "568851353.527265"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "712">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
