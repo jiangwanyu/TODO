@@ -7,6 +7,7 @@ target 'TODO' do
 
   # Pods for TODO
 pod 'RealmSwift', '3.2.0'
+pod 'SwipeCellKit', '2.4.3'
 
 
 
