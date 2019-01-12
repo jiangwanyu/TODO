@@ -16,10 +16,7 @@ class CategoryViewController: UITableViewController {
     var categories: Results<Category>?
     
     let realm = try! Realm()
-    
-    
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +53,9 @@ class CategoryViewController: UITableViewController {
             }
         }
     }
+    
+    
+    
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         var textField = UITextField()
@@ -123,7 +123,7 @@ extension CategoryViewController: SwipeTableViewCellDelegate {
     func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeTableOptions {
         var options = SwipeTableOptions()
         options.expansionStyle = .destructive
-        // options.transitionStyle = .border
+        //options.transitionStyle = .border
         return options
     }
 }

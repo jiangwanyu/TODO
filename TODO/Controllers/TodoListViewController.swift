@@ -8,7 +8,7 @@
 
 import UIKit
 import RealmSwift
-
+import SwipeCellKit
 
 class TodoListViewController: UITableViewController {
     
@@ -29,7 +29,7 @@ class TodoListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.rowHeight = 80.0
         //print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
         //loadItems()
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
@@ -45,8 +45,9 @@ class TodoListViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
-       
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath) as! SwipeTableViewCell
+        cell.delegate = self
+        
         if let item = todoItems?[indexPath.row]{
            cell.textLabel?.text = item.title
             cell.accessoryType = item.done == true ? .checkmark : .none
@@ -136,6 +137,37 @@ extension TodoListViewController: UISearchBarDelegate {
             searchBar.resignFirstResponder()
             }
         }
+    }
+}
+// MARK: - Swipe Cell Delegate Methods
+
+extension TodoListViewController: SwipeTableViewCellDelegate {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+        
+        let deleteAction = SwipeAction(style: .destructive, title: "删除") { action, indexPath in
+            if let itemForDeletion = self.todoItems?[indexPath.row] {
+                do {
+                    try self.realm.write {
+                        self.realm.delete(itemForDeletion)
+                    }
+                }catch {
+                    print("删除类别失败：\(error)")
+                }
+            }
+        }
+        
+        // customize the action appearance
+        deleteAction.image = UIImage(named: "Trash-Icon")
+        
+        return [deleteAction]
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeTableOptions {
+        var options = SwipeTableOptions()
+        options.expansionStyle = .destructive
+        //options.transitionStyle = .border
+        return options
     }
 }
 
